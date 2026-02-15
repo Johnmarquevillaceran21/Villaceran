@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Marque Villaceran Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+/* ===== BACKGROUND - COOL BLUES ===== */
+body{
+  background:linear-gradient(-45deg,#1e3a8a,#1e4b8a,#0c4a6e,#0f2b5c);
+  background-size:400% 400%;
+  animation:gradientShift 18s ease infinite;
+  color:#e0f2fe;
+  min-height:100vh;
+  padding:0 1rem 2rem;
+}
+
+@keyframes gradientShift{
+  0%{background-position:0% 0%;}
+  50%{background-position:100% 100%;}
+  100%{background-position:0% 0%;}
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ===== NAV - BLUE ACCENTS ===== */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0.8rem 2rem;
+  margin:1.5rem auto 2rem;
+  background:rgba(15,23,42,0.7);
+  backdrop-filter:blur(18px);
+  border-radius:3rem;
+  border:1px solid rgba(37, 99, 235, 0.5); /* blue-600 */
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+nav a{
+  text-decoration:none;
+  color:#bfdbfe; /* blue-200 */
+  padding:0.5rem 1.2rem;
+  border-radius:2rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  background:linear-gradient(135deg,#2563eb,#0284c7); /* blue-600 to sky-600 */
+  color:white;
+  box-shadow:0 6px 20px rgba(37,99,235,0.5); /* blue shadow */
+  cursor:pointer;
+}
+
+/* ===== HERO - BLUE THEME ===== */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:2rem;
+  flex-wrap:wrap;
+  gap:3rem;
+  background:rgba(17,24,39,0.7);
+  backdrop-filter:blur(12px);
+  border-radius:3rem;
+  border:1px solid rgba(37, 99, 235, 0.4); /* blue-600 */
+}
+
+.hero-left {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-right{
+  flex: 1;
+  text-align: left;
+}
+
+.hero h2{
+  font-size:3rem;
+  background:linear-gradient(to right,#ffffff,#60a5fa,#2563eb); /* white to blue-400 to blue-600 */
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom: 0.5rem;
+}
+
+/* PROFILE IMAGE - 2x2 STYLE with blue border */
+.profile-img{
+  width:200px;
+  height:200px;
+  object-fit:cover;
+  border-radius:0; /* Square shape for 2x2 */
+  margin:0;
+  border:4px solid #2563eb; /* blue-600 */
+  box-shadow:0 18px 30px -8px #1e3a8a; /* darker blue */
+  transition:0.4s;
+}
+
+.profile-img:hover{
+  transform:scale(1.08);
+  border-color:#60a5fa; /* blue-400 */
+  box-shadow:0 28px 35px -8px #3b82f6; /* blue-500 */
+}
+
+/* TYPING */
+.typing{
+  font-size:1.4rem;
+  margin-top:10px;
+  color:#bae6fd;
+}
+
+/* ===== SECTION ===== */
+.section{
+  margin-top:2.5rem;
+}
+
+.card{
+  background:rgba(17,24,39,0.75);
+  backdrop-filter:blur(14px);
+  border-radius:2rem;
+  padding:2.5rem;
+  border:1px solid rgba(37, 99, 235, 0.5); /* blue-600 */
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#60a5fa; /* blue-400 */
+  box-shadow:0 10px 30px rgba(37,99,235,0.4); /* blue shadow */
+}
+
+.card h2{
+  margin-bottom:1.5rem;
+  border-left:6px solid #2563eb; /* blue-600 */
+  padding-left:1rem;
+  background:linear-gradient(to right,#ffffff,#60a5fa,#2563eb); /* white to blues */
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* SKILLS */
+.skills span{
+  display:inline-block;
+  padding:0.6rem 1.4rem;
+  margin:0.4rem;
+  border-radius:2rem;
+  border:1.5px solid #2563eb; /* blue-600 */
+  background:rgba(37, 99, 235, 0.2); /* blue tint */
+  transition:0.3s;
+}
+
+.skills span:hover{
+  background:linear-gradient(135deg,#2563eb,#0284c7); /* blue to sky */
+  box-shadow:0 10px 18px -6px #2563eb;
+  cursor:pointer;
+}
+
+/* PROJECTS & ACHIEVEMENTS */
+.project, .achievement{
+  background:rgba(15,23,42,0.8);
+  padding:1rem 1.5rem;
+  margin:1rem 0;
+  border-radius:1.5rem;
+  border-left:8px solid #2563eb; /* blue-600 */
+  transition:0.3s;
+}
+
+.project:hover, .achievement:hover{
+  background:#1e4b8a; /* darker blue */
+  border-left-color:#60a5fa; /* blue-400 */
+  transform:translateX(8px);
+}
+
+/* CONTACT */
+.contact-info p{
+  margin:1rem 0;
+  font-size:1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  min-width: 30px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  margin-top:3rem;
+  padding:1.5rem;
+  font-size:0.9rem;
+  color:#94a3b8;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-left {
+    justify-content: center;
+  }
+  .hero-right {
+    text-align: center;
+  }
+  .hero h2{
+    font-size:2.2rem;
+  }
+  .profile-img{
+    width:150px;
+    height:150px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- NAV -->
+<nav>
+<ul>
+<li><a href="#personal">Personal</a></li>
+<li><a href="#objective">Objective</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-left">
+<!-- 2x2 Picture on the LEFT side - Replace the src with your actual image path -->
+<img src="villaceran.png" class="profile-img" alt="Mitch Lourence Santillan">
+<!-- Or use a local image: <img src="your-2x2-image.jpg" class="profile-img" alt="profile"> -->
+</div>
+<div class="hero-right">
+<h2>John Marque Villaceran</h2>
+<p class="typing">Future IT Specialist | Hardware & Software Enthusiast</p>
+</div>
+</section>
+
+<!-- PERSONAL -->
+<section id="personal" class="section">
+<div class="card">
+<h2>👤 Personal Information</h2>
+<p>Name: John Marque Villaceran</p>
+<p>Course: BSIT · 3rd Year</p>
+</div>
+</section>
+
+<!-- OBJECTIVE -->
+<section id="objective" class="section">
+<div class="card">
+<h2>🎯 Career Objective</h2>
+<p>To build a strong foundation in IT and specialize in IT support, hardware maintenance, and network configuration to help organizations efficiently manage their systems.</p>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+<div class="card">
+<h2>🛠 Skills</h2>
+<div class="skills">
+<span>IT Support – Advanced</span>
+<span>Hardware Maintenance – Advanced</span>
+<span>Software Installation – Expert</span>
+<span>Network Configuration – Intermediate</span>
+</div>
+</div>
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="section">
+<div class="card">
+<h2>🏆 Achievements</h2>
+<div class="achievement">Basketball Tournament Champion – Brgy Malbago, Madridejos 2024</div>
+<div class="achievement">Basketball Tournament Champion – Brgy Malbago, Madridejos 2025</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<div class="card">
+<h2>📞 Contact</h2>
+<div class="contact-info">
+<p><span class="contact-icon">📧</span> Email: johnmarquevillaceran21@gmail.com</p>
+<p><span class="contact-icon">📱</span> Phone: +63 966 183 6759</p>
+<p><span class="contact-icon">📍</span> Address: Madridejos, Philippines</p>
+</div>
+</div>
+</section>
+
+
+</div>
+</body>
+</html>
